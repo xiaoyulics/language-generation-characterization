@@ -1,0 +1,256 @@
+⚠ [3103/3133] Replayed GenLimit.FiniteWitness.Width.Executable
+warning: GenLimit/FiniteWitness/Width/Executable.lean:38:0: automatically included section variable(s) unused in theorem `GenLimit.FiniteWitness.pickWord_spec`:
+  [DecidableEq α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq α] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: GenLimit/FiniteWitness/Width/Executable.lean:107:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3108/3133] Replayed GenLimit.FiniteWitness.Width.Value
+warning: GenLimit/FiniteWitness/Width/Value.lean:78:29: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  simp [separationWidth, h,̵ ̵h̵w, hall]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3110/3133] Replayed GenLimit.FiniteWitness.Width.Anchored
+warning: GenLimit/FiniteWitness/Width/Anchored.lean:68:4: Try `simp at hh` instead of `simpa using hh`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: GenLimit/FiniteWitness/Width/Anchored.lean:84:4: Try `simp at hh` instead of `simpa using hh`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: GenLimit/FiniteWitness/Width/Anchored.lean:97:2: Try `simp at h` instead of `simpa using h`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3112/3133] Replayed GenLimit.FiniteWitness.Width.AnchoredUpper
+warning: GenLimit/FiniteWitness/Width/AnchoredUpper.lean:39:49: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3113/3133] Replayed GenLimit.FiniteWitness.Width.TwoCore
+warning: GenLimit/FiniteWitness/Width/TwoCore.lean:52:36: unused variable `hL`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3117/3133] Replayed GenLimit.FiniteWitness.Width.Endpoints
+warning: GenLimit/FiniteWitness/Width/Endpoints.lean:32:2: Try `simp at this` instead of `simpa using this`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3118/3133] Replayed GenLimit.FiniteWitness.Width.Barriers
+warning: GenLimit/FiniteWitness/Width/Barriers.lean:22:2: Try `simp at hlt` instead of `simpa using hlt`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3120/3133] Replayed GenLimit.FiniteWitness.Width.EUC
+warning: GenLimit/FiniteWitness/Width/EUC.lean:12:36: unused variable `x`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3121/3133] Replayed GenLimit.FiniteWitness.Width.Sorting
+warning: GenLimit/FiniteWitness/Width/Sorting.lean:110:32: unused variable `hk`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [3123/3133] Replayed GenLimit.FiniteWitness.Width.CoreAudit
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:5:0: def GenLimit.FiniteWitness.Valid.{u_1} : {α : Type u_1} → Set (Set α) → (Set α → Finset α) → Prop :=
+fun {α} H T =>
+  GenLimit.FiniteWitness.Positive H T ∧
+    ∀ (S : Finset α),
+      (GenLimit.FiniteWitness.active H T S).Nonempty → (GenLimit.FiniteWitness.activeCore H T S).Infinite
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:6:0: def GenLimit.FiniteWitness.HasBoundedWitnesses.{u_1} : {α : Type u_1} → Set (Set α) → ℕ → Prop :=
+fun {α} H d => ∃ T, GenLimit.FiniteWitness.Valid H T ∧ ∀ L ∈ H, (T L).card ≤ d
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:7:0: @[reducible] def GenLimit.FiniteWitness.SeparationValue : Type :=
+WithTop (WithTop ℕ)
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:8:0: def GenLimit.FiniteWitness.setCost.{u_1} : {α : Type u_1} → Set α → GenLimit.FiniteWitness.SeparationValue :=
+fun {α} S => if h : S.Finite then GenLimit.FiniteWitness.finiteValue h.toFinset.card else ⊤
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:9:0: def GenLimit.FiniteWitness.assignmentCost.{u_1} : {α : Type u_1} →
+  Set (Set α) → (Set α → Set α) → GenLimit.FiniteWitness.SeparationValue :=
+fun {α} H P => ⨆ L, GenLimit.FiniteWitness.setCost (P ↑L)
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:10:0: @GenLimit.FiniteWitness.valid_iff_positive_separates : ∀ {α : Type u_1} (H : Set (Set α)) (T : Set α → Finset α),
+  GenLimit.FiniteWitness.Valid H T ↔ GenLimit.FiniteWitness.Positive H T ∧ GenLimit.FiniteWitness.Separates H T
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:11:0: @GenLimit.FiniteWitness.exists_countable_same_core : ∀ {α : Type u_1} [Countable α] {F : Set (Set α)},
+  F.Nonempty → ∃ C ⊆ F, C.Nonempty ∧ C.Countable ∧ ⋂₀ C = ⋂₀ F
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:12:0: @GenLimit.FiniteWitness.setSeparates_iff_countable : ∀ {α : Type u_1} [Countable α] (H : Set (Set α))
+  (P : Set α → Set α),
+  GenLimit.FiniteWitness.SetSeparates H P ↔
+    ∀ F ⊆ H, F.Nonempty → F.Countable → (⋂₀ F).Finite → ∃ L ∈ F, ∃ K ∈ F, ¬P L ⊆ K
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:13:0: @GenLimit.FiniteWitness.countable_singleton_witnesses : ∀ {α : Type u_1} [Infinite α] {H : Set (Set α)},
+  H.Countable →
+    GenLimit.Generic.UUS H →
+      ∃ p, Function.Injective p ∧ ∃ T, GenLimit.FiniteWitness.Valid H T ∧ ∀ (L : ↑H), T ↑L = {p L}
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:14:0: @GenLimit.FiniteWitness.bounded_capture : ∀ {α : Type u_1} (d : ℕ) (U : ℕ → Finset α),
+  (∀ (n : ℕ), (U n).card ≤ d) → ∀ (C : ℕ → Set α), ∃ D, {n | ↑(U n) ⊆ D}.Infinite ∧ ∀ (m : ℕ), (C m).Infinite → ¬C m ⊆ D
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:15:0: @GenLimit.FiniteWitness.width_isLeast_cost : ∀ {α : Type u_1} {H : Set (Set α)},
+  GenLimit.Generic.UUS H →
+    IsLeast {w | ∃ P, GenLimit.FiniteWitness.IsSeparator H P ∧ GenLimit.FiniteWitness.assignmentCost H P = w}
+      (GenLimit.FiniteWitness.separationWidth H)
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:16:0: @GenLimit.FiniteWitness.ordinary_iff_width : ∀ {α : Type u_1} [Countable α] [Infinite α] (H : Set (Set α)),
+  GenLimit.Generic.UUS H →
+    (GenLimit.Generic.GeneratableInLimit H ↔
+      GenLimit.FiniteWitness.separationWidth H ≤ GenLimit.FiniteWitness.omegaValue)
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:17:0: @GenLimit.FiniteWitness.width_mono : ∀ {α : Type u_1} {H K : Set (Set α)},
+  H ⊆ K → GenLimit.FiniteWitness.separationWidth H ≤ GenLimit.FiniteWitness.separationWidth K
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:18:0: @GenLimit.FiniteWitness.width_zero_iff : ∀ {α : Type u_1} [Infinite α] (H : Set (Set α)),
+  GenLimit.FiniteWitness.separationWidth H = GenLimit.FiniteWitness.finiteValue 0 ↔ (⋂₀ H).Infinite
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:19:0: 'GenLimit.FiniteWitness.valid_iff_positive_separates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:20:0: 'GenLimit.FiniteWitness.setSeparates_iff_countable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:21:0: 'GenLimit.FiniteWitness.countable_singleton_witnesses' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:22:0: 'GenLimit.FiniteWitness.bounded_capture' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:23:0: 'GenLimit.FiniteWitness.width_isLeast_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:24:0: 'GenLimit.FiniteWitness.ordinary_iff_width' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:25:0: 'GenLimit.FiniteWitness.width_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/CoreAudit.lean:26:0: 'GenLimit.FiniteWitness.width_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3124/3133] Replayed GenLimit.FiniteWitness.Width.HierarchyAudit
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:5:0: GenLimit.FiniteWitness.Anchored.lower_incidence {k q : ℕ} {T : Set Anchored.Point → Finset Anchored.Point}
+  (hT : Valid (Anchored.family k) T) (hb : ∀ L ∈ Anchored.family k, (T L).card ≤ q) : k * k ≤ 2 * k * q
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:6:0: GenLimit.FiniteWitness.Anchored.exact_width (k : ℕ) : separationWidth (Anchored.family k) = finiteValue ((k + 1) / 2)
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:7:0: GenLimit.FiniteWitness.TwoCore.exact_width : separationWidth TwoCore.family = omegaValue
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:8:0: GenLimit.FiniteWitness.TwoCore.right_witness_tendsto {T : Set TwoCore.Point → Finset TwoCore.Point}
+  (hT : Valid TwoCore.family T) :
+  Filter.Tendsto (fun n => (TwoCore.rightPart (T (TwoCore.rightChain n))).card) Filter.atTop Filter.atTop
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:9:0: GenLimit.FiniteWitness.TwoCore.left_witness_tendsto {T : Set TwoCore.Point → Finset TwoCore.Point}
+  (hT : Valid TwoCore.family T) :
+  Filter.Tendsto (fun n => (TwoCore.leftPart (T (TwoCore.leftChain n))).card) Filter.atTop Filter.atTop
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:10:0: GenLimit.FiniteWitness.width_transport.{u_1, u_2} {α : Type u_1} {β : Type u_2} (e : α ≃ β) (H : Set (Set α)) :
+  separationWidth (transportClass e H) = separationWidth H
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:11:0: GenLimit.FiniteWitness.cofinite_width.{u_1} {α : Type u_1} [Countable α] [Infinite α] :
+  separationWidth (cofinite α) = finiteValue 1
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:12:0: GenLimit.FiniteWitness.allInfinite_width.{u_1} {α : Type u_1} [Countable α] [Infinite α] :
+  separationWidth (allInfinite α) = ⊤
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:13:0: GenLimit.FiniteWitness.full_range.{u_1} {α : Type u_1} [Countable α] [Infinite α] (v : SeparationValue) :
+  ∃ H, GenLimit.Generic.UUS H ∧ separationWidth H = v
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:14:0: GenLimit.FiniteWitness.no_countably_supported_dimension.{u_1} {α : Type u_1} [Countable α] [Infinite α] :
+  ¬∃ D,
+      (∀ (H : GenLimit.Generic.LanguageClass α),
+          GenLimit.Generic.UUS H → (GenLimit.Generic.GeneratableInLimit H ↔ D H < ⊤)) ∧
+        ∀ (H : GenLimit.Generic.LanguageClass α), GenLimit.Generic.UUS H → D H = ⊤ → ∃ K ⊆ H, Set.Countable K ∧ D K = ⊤
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:15:0: GenLimit.FiniteWitness.finite_level_not_countably_determined (d : ℕ) :
+  ∃ H,
+    GenLimit.Generic.UUS H ∧
+      separationWidth H = finiteValue (d + 1) ∧ ∀ K ⊆ H, K.Countable → separationWidth K ≤ finiteValue 1
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:16:0: def GenLimit.FiniteWitness.finiteTraces.{u_1} : {α : Type u_1} → Set (Set α) → Finset α → Set (Set α) :=
+fun {α} H F => {E | ∃ L ∈ H, L ∩ ↑F = E}
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:17:0: def GenLimit.FiniteWitness.positiveClosure.{u_1} : {α : Type u_1} → Set (Set α) → Finset α → Set α :=
+fun {α} H S => {x | ∀ L ∈ H, ↑S ⊆ L → x ∈ L}
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:18:0: GenLimit.FiniteWitness.profiles_do_not_determine_ordinary.{u_1} {α : Type u_1} [Countable α] [Infinite α] :
+  (∀ (F : Finset α), finiteTraces (cofinite α) F = finiteTraces (allInfinite α) F) ∧
+    (∀ (S : Finset α), positiveClosure (cofinite α) S = positiveClosure (allInfinite α) S) ∧
+      GenLimit.Generic.GeneratableInLimit (cofinite α) ∧ ¬GenLimit.Generic.GeneratableInLimit (allInfinite α)
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:19:0: def GenLimit.FiniteWitness.badCost.{u_1} : {α : Type u_1} → Set (Set α) → (Set α → Finset α) → WithTop ℕ :=
+fun {α} H T => ⨆ S, ↑((↑S).card + 1)
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:20:0: def GenLimit.FiniteWitness.paddedDimension.{u_1} : {α : Type u_1} → Set (Set α) → WithTop ℕ :=
+fun {α} H => ⨅ T, badCost H ↑T
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:21:0: GenLimit.FiniteWitness.padding_removes_finite_defects.{u_1} {α : Type u_1} {H : Set (Set α)}
+  (hUUS : GenLimit.Generic.UUS H) {T : Set α → Finset α} (hp : Positive H T) (d : ℕ)
+  (hb : ∀ (S : Finset α), BadSample H T S → S.card + 1 ≤ d) : ∃ T', Valid H T' ∧ ∀ L ∈ H, T L ⊆ T' L
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:22:0: GenLimit.FiniteWitness.padding_collapse.{u_1} {α : Type u_1} [Countable α] [Infinite α] (H : Set (Set α))
+  (hUUS : GenLimit.Generic.UUS H) :
+  (GenLimit.Generic.GeneratableInLimit H → paddedDimension H = 0) ∧
+    (¬GenLimit.Generic.GeneratableInLimit H → paddedDimension H = ⊤)
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:24:0: 'GenLimit.FiniteWitness.Anchored.lower_incidence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:25:0: 'GenLimit.FiniteWitness.Anchored.exact_width' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:26:0: 'GenLimit.FiniteWitness.TwoCore.exact_width' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:27:0: 'GenLimit.FiniteWitness.TwoCore.right_witness_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:28:0: 'GenLimit.FiniteWitness.TwoCore.left_witness_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:29:0: 'GenLimit.FiniteWitness.width_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:30:0: 'GenLimit.FiniteWitness.cofinite_width' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:31:0: 'GenLimit.FiniteWitness.allInfinite_width' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:32:0: 'GenLimit.FiniteWitness.full_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:33:0: 'GenLimit.FiniteWitness.no_countably_supported_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:34:0: 'GenLimit.FiniteWitness.finite_level_not_countably_determined' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:35:0: 'GenLimit.FiniteWitness.profiles_do_not_determine_ordinary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:36:0: 'GenLimit.FiniteWitness.padding_removes_finite_defects' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/HierarchyAudit.lean:37:0: 'GenLimit.FiniteWitness.padding_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3125/3133] Replayed GenLimit.FiniteWitness.Width.SupplementAudit
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:7:0: GenLimit.FiniteWitness.euc_iff_eventual_on_texts.{u_1} {α : Type u_1} [Countable α] (H : Set (Set α))
+  (hUUS : GenLimit.Generic.UUS H) :
+  EventuallyUnboundedClosure H ↔
+    ∀ L ∈ H,
+      ∀ (stream : GenLimit.Generic.Stream α),
+        GenLimit.Generic.Presents stream L →
+          ∃ N, ∀ n ≥ N, (positiveClosure H (GenLimit.Generic.sample stream n)).Infinite
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:8:0: GenLimit.FiniteWitness.increasing_euc_cover.{u_1} {α : Type u_1} {H : Set (Set α)} (K : ℕ → Set (Set α))
+  (hmono : Monotone K) (hcover : H = ⋃ n, K n) (hEUC : ∀ (n : ℕ), EventuallyUnboundedClosure (K n)) :
+  HasFiniteWitnesses H
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:9:0: GenLimit.FiniteWitness.increasing_euc_cover_ordinary.{u_1} {α : Type u_1} [Countable α] [Infinite α] {H : Set (Set α)}
+  (K : ℕ → Set (Set α)) (hmono : Monotone K) (hcover : H = ⋃ n, K n)
+  (hEUC : ∀ (n : ℕ), EventuallyUnboundedClosure (K n)) : GenLimit.Generic.GeneratableInLimit H
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:10:0: def GenLimit.FiniteWitness.Sorting.output : List ℕ → ℕ :=
+fun xs =>
+  if List.Pairwise (fun x1 x2 => x1 < x2) xs ∧ xs.toFinset ≠ Finset.Icc 1 (xs.toFinset.sup id) then 0
+  else xs.toFinset.sup id + 1
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:11:0: def GenLimit.FiniteWitness.Sorting.generator : GenLimit.Generic.Generator ℕ :=
+fun x xs => Sorting.output (List.ofFn xs)
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:12:0: def GenLimit.FiniteWitness.Sorting.sortedOutput : Finset ℕ → ℕ :=
+fun S => Sorting.output (Finset.sort (fun x1 x2 => x1 ≤ x2) S)
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:13:0: def GenLimit.FiniteWitness.Sorting.badStream : ℕ → ℕ :=
+fun n => if n = 0 then 1 else if n % 2 = 1 then n + 2 else n
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:14:0: GenLimit.FiniteWitness.Sorting.sorting_counterexample :
+  GenLimit.Generic.IsLimitGenerator Sorting.generator {Sorting.language} ∧
+    ¬GenLimit.Generic.IsLimitGenerator (ofSet Sorting.sortedOutput) {Sorting.language}
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:15:0: GenLimit.FiniteWitness.normalized_finite_query_bound.{u_1} {α : Type u_1} [DecidableEq α] [Encodable α]
+  {F G : List α → α} (S : Finset α) (h : ∀ q ∈ boundedWords S (2 * S.card), F q = G q) : normalized F S = normalized G S
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:16:0: GenLimit.FiniteWitness.executableRun_eq.{u_1} {α : Type u_1} [DecidableEq α] [Encodable α] (F : List α → α)
+  (S : Finset α) (n k : ℕ) : executableRun F S n k = sampleRun F S n k
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:17:0: GenLimit.FiniteWitness.executableNormalization_finite_queries {G G' : GenLimit.Generic.Generator ℕ} (S : Finset ℕ)
+  (h : ∀ q ∈ boundedWords S (2 * S.card), listOutput G q = listOutput G' q) :
+  executableNormalization G S = executableNormalization G' S
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:18:0: GenLimit.FiniteWitness.executable_universal_normalization (G : GenLimit.Generic.Generator ℕ) (L : Set ℕ) :
+  L.Infinite →
+    (∀ (stream : GenLimit.Generic.Stream ℕ),
+        GenLimit.Generic.Presents stream L → ∃ N, ∀ n ≥ N, GenLimit.Generic.CorrectAt G L stream n) →
+      Locks (executableNormalization G) L
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:19:0: 'GenLimit.FiniteWitness.euc_iff_eventual_on_texts' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:20:0: 'GenLimit.FiniteWitness.increasing_euc_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:21:0: 'GenLimit.FiniteWitness.increasing_euc_cover_ordinary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:22:0: 'GenLimit.FiniteWitness.Sorting.sorting_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:23:0: 'GenLimit.FiniteWitness.normalized_finite_query_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:24:0: 'GenLimit.FiniteWitness.executableRun_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:25:0: 'GenLimit.FiniteWitness.executableNormalization_finite_queries' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:26:0: 'GenLimit.FiniteWitness.executable_universal_normalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:33:0: 1
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:34:0: 2
+info: GenLimit/FiniteWitness/Width/SupplementAudit.lean:35:0: 3
+✔ [3127/3133] Built GenLimit.FiniteWitness (9.5s)
+✔ [3128/3133] Built GenLimit.FiniteWitness.Simplified.Normalization (9.7s)
+✔ [3129/3133] Built GenLimit.FiniteWitness.Simplified.Executable (2.8s)
+✔ [3130/3133] Built GenLimit.FiniteWitness.Simplified (2.5s)
+✔ [3131/3133] Built GenLimit (3.2s)
+⚠ [3133/3133] Built GenLimit.FiniteWitness.Simplified.Audit (4.2s)
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:7:0: GenLimit.FiniteWitness.Simplified.universal_normalization.{u_1} {α : Type u_1} [Countable α] [Infinite α]
+  (G : GenLimit.Generic.Generator α) :
+  ∃ g,
+    ∀ (L : Set α),
+      L.Infinite →
+        (∀ (stream : GenLimit.Generic.Stream α),
+            GenLimit.Generic.Presents stream L → ∃ t₀, ∀ (t : ℕ), t₀ ≤ t → GenLimit.Generic.CorrectAt G L stream t) →
+          Locks g L
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:8:0: GenLimit.FiniteWitness.Simplified.full_characterization.{u_1} {α : Type u_1} [Countable α] [Infinite α]
+  (H : GenLimit.Generic.LanguageClass α) (hUUS : GenLimit.Generic.UUS H) :
+  (GenLimit.Generic.GeneratableInLimit H ↔ SetDrivenGeneratable H) ∧ (SetDrivenGeneratable H ↔ HasFiniteWitnesses H)
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:9:0: GenLimit.FiniteWitness.Simplified.bounded_capture_indexed.{u_1, u_2} {α : Type u_1} {ι : Type u_2} [Countable ι] (d : ℕ)
+  (U : ℕ → Finset α) (hU : ∀ (n : ℕ), (U n).card ≤ d) (C : ι → Set α) :
+  ∃ D, {n | ↑(U n) ⊆ D}.Infinite ∧ ∀ (i : ι), (C i).Infinite → ¬C i ⊆ D
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:10:0: 'GenLimit.FiniteWitness.Simplified.firstPoints_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:11:0: 'GenLimit.FiniteWitness.Simplified.firstPoints_agree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:12:0: 'GenLimit.FiniteWitness.Simplified.orderedCheckpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:13:0: 'GenLimit.FiniteWitness.Simplified.candidate_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:14:0: 'GenLimit.FiniteWitness.Simplified.normalized_locks' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:15:0: 'GenLimit.FiniteWitness.Simplified.universal_normalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:16:0: 'GenLimit.FiniteWitness.Simplified.full_characterization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:17:0: 'GenLimit.FiniteWitness.Simplified.bounded_capture' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:18:0: 'GenLimit.FiniteWitness.Simplified.bounded_capture_indexed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:19:0: 'GenLimit.FiniteWitness.Simplified.executableNormalized_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:20:0: 'GenLimit.FiniteWitness.Simplified.executable_universal_normalization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+warning: GenLimit/FiniteWitness/Simplified/Audit.lean:23:6: unused variable `n`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:24:0: 1
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:25:0: 1
+info: GenLimit/FiniteWitness/Simplified/Audit.lean:26:0: 2
+Build completed successfully (3133 jobs).

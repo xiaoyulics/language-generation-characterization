@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when referring to its results; this entry identifies the Lean development."
+type: software
+title: "Characterizing Language Generation in the Limit: Finite Witnesses and a Separation-Width Hierarchy — Lean development"
+authors:
+  - family-names: Li
+    given-names: Xiaoyu
+    affiliation: University of New South Wales
+    email: xiaoyu.li2@unsw.edu.au
+  - family-names: Han
+    given-names: Andi
+    affiliation: University of Sydney
+    email: andi.han@sydney.edu.au
+  - family-names: Jiang
+    given-names: Jiaojiao
+    affiliation: University of New South Wales
+    email: jiaojiao.jiang@unsw.edu.au
+  - family-names: Gao
+    given-names: Junbin
+    affiliation: University of Sydney
+    email: junbin.gao@sydney.edu.au
+repository-code: "https://github.com/xiaoyulics/language-generation-characterization"
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-09-10
