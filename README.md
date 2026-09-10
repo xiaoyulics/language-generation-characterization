@@ -4,6 +4,10 @@ Lean 4 code accompanying **Characterizing Language Generation in the Limit:
 Finite Witnesses and a Separation-Width Hierarchy**, by **Xiaoyu Li, Andi Han,
 Jiaojiao Jiang, and Junbin Gao**.
 
+**Paper:** [arXiv:2609.10525](https://arxiv.org/abs/2609.10525)
+| [HTML (v1)](https://arxiv.org/html/2609.10525v1)
+| [PDF (v1)](https://arxiv.org/pdf/2609.10525v1)
+
 The development proves the finite-witness characterization of generation in
 the limit and the complete separation-width hierarchy. It includes the paper's
 first-k normalization, its executable implementation on the natural numbers,
@@ -81,10 +85,23 @@ bound is asserted for the current algorithm.
 
 ## Availability and citation
 
-Repository: <https://github.com/xiaoyulics/language-generation-characterization>.
-It is private during manuscript preparation. Public release is planned after
-the paper is uploaded to arXiv; no arXiv identifier is assigned here yet.
-The author list and software citation metadata are in [CITATION.cff](CITATION.cff).
+The paper is available on [arXiv](https://arxiv.org/abs/2609.10525), and this
+[Lean development](https://github.com/xiaoyulics/language-generation-characterization)
+is public. Please cite the paper when referring to its results:
+
+```bibtex
+@misc{li2026characterizinglanguagegeneration,
+  title         = {Characterizing Language Generation in the Limit: Finite Witnesses and a Separation-Width Hierarchy},
+  author        = {Xiaoyu Li and Andi Han and Jiaojiao Jiang and Junbin Gao},
+  year          = {2026},
+  eprint        = {2609.10525},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.FL},
+  url           = {https://arxiv.org/abs/2609.10525}
+}
+```
+
+Software citation metadata are in [CITATION.cff](CITATION.cff).
 
 The code is distributed under [Apache-2.0](LICENSE). Third-party dependencies
 retain their own licenses.
